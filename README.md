@@ -16,12 +16,18 @@ Generar la solución y proyectos
 
 Solución:
 
+```bash
 dotnet new sln --name CANetCore
+```
 
 Agregar el proyecto de dominio
 
+```bash
 dotnet new classlib -o src/CleanArchitecture/CleanArchitecture.Domain
+```
 
 Vincular el dominio a la solución
 
+```bash
 dotnet sln add src/CleanArchitecture/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj
+```
