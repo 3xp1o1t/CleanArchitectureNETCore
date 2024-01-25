@@ -31,3 +31,20 @@ Vincular el dominio a la solución
 ```bash
 dotnet sln add src/CleanArchitecture/CleanArchitecture.Domain/CleanArchitecture.Domain.csproj
 ```
+
+Compilar para verificar si hay errores
+
+```bash
+dotnet build
+```
+
+## Dominio Vehiculo
+
+Los dominios/negocio deben aplicar el principio solid S
+Principio de responsabilidad única, la palabra reservada **Sealed**
+en la definición de la clase garantiza que no pueda ser heredado
+respetan este principio.
+
+```c#
+public sealed class Vehiculo {}
+```
