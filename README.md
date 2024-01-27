@@ -48,3 +48,24 @@ respetan este principio.
 ```c#
 public sealed class Vehiculo {}
 ```
+
+## Refactorizar la entidad Vehículo usando DDD
+
+Para que una clase sea considerara una **entidad** en DDD debe cumplir dos reglas.
+
+1. Debe tener una propiedad que la diferencie, por ejemplo un ID.
+   1. El ID solo debe de especificarse durante la creación del objeto, después no debe ser modificado
+   2. En C# marcar una propiedad como **init** en lugar de **set** realiza dicha función previene de cambios ID.
+2. Debe ser continua. (La existencia de este objeto debe estar presente durante toda la vida util de la aplicación)
+
+Algunas propiedades no transmiten significado alguno, por ejemplo en la clase Vehículo
+las propiedades que hacen referencia a la dirección (Calle, Departamento) se pueden componer
+en una clase o mejor dicho en un Value Object, los values objects se pueden representar
+con una clase (Método antiguo) o con un registro Record
+
+La clase **Direccion**.cs demuestra el concepto de un Object Value.
+
+En pocas palabras un Object Value, son valores únicos, véase la clase Modelo.cs
+
+`Cuando un modelo/entidad/dominio utiliza solo propiedades con valores primitivos
+se dice que es de tipo **Anemico**, cuando usa Object Values entonces es un modelo **Enriquezido**`
