@@ -69,3 +69,19 @@ En pocas palabras un Object Value, son valores únicos, véase la clase Modelo.c
 
 `Cuando un modelo/entidad/dominio utiliza solo propiedades con valores primitivos
 se dice que es de tipo **Anemico**, cuando usa Object Values entonces es un modelo **Enriquezido**`
+
+## Instalar un paquete de Nuget desde la terminal
+
+Es posible utilizar también una extension de VSCode llamada Nuget Packages
+
+MediaTR es una librería que proporciona el patron **Mediador** lo que permite la comunicación
+entre diferentes componentes sin que estén acoplados directamente entre si, este patron mediador
+normalmente se utiliza en arquitecturas **CQRS** (Command Query Responsibility Segregation) y aplicaciones
+basadas en eventos
+
+```bash
+# Ingresamos al directorio de los dominios donde se usara MediatR
+cd /src/CleanArchitecture/CleanArchitecture.Domain
+# Instalar el paquete
+dotnet add package MediatR.Contracts --version 2.0.1
+```
