@@ -85,3 +85,30 @@ cd /src/CleanArchitecture/CleanArchitecture.Domain
 # Instalar el paquete
 dotnet add package MediatR.Contracts --version 2.0.1
 ```
+
+## Patron repository
+
+El patron repository nos permite representar las operaciones de las entidades a traves
+de una interfaz común
+
+**IUserRepository** es un ejemplo del patron
+
+Adicionalmente, se pueden usar genéricos para crear una interfaz IRepository que contenga
+el comportamiento compartido entre las entidades
+
+Ejemplo usando genéricos
+
+```csharp
+// Capa Dominio
+public interface IRepository<T>
+{
+   T GetById(int id);
+   void Add(T entity);
+   void Update(T entity);
+   void Delete(T entity);
+}
+// Capa Infrastructura implementa la interfaz por ejemplo
+public class DatabaseRepository<T> : IRepository<T> {}
+```
+
+La unidad de trabajo **IUnitOfWork** permite compartir funcionalidades genéricas de la lógica de negocio
